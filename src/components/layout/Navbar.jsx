@@ -48,23 +48,23 @@ const Navbar = () => {
     }, [userdrop])
 
     return (
-        <nav className='pt-8'>
+        <div className='pt-8'>
             <Container>
-                <div className='flex justify-between items-center pb-8'>
+                <nav className='flex justify-between items-center pb-8'>
                     <NavLink to={'/'}><Image src={logoImg} alt={"logo.png"} /></NavLink>
                     <div>
                         <ul className='flex gap-10'>
                             {
                                 MenuData.map((item, index) => (
                                     <li key={item.id}>
-                                        <NavLink className={`${item.url == pathName ? 'text-red-500' : 'text-black'}`} to={item.url}>{item.label} </NavLink>
+                                        <NavLink className={`${item.url == pathName ? 'text-red-500 font-semibold' : 'text-black font-semibold'}`} to={item.url}>{item.label} </NavLink>
                                     </li>
                                 ))
                             }
                         </ul>
                     </div>
 
-                </div>
+                </nav>
             </Container>
             <div className=' bg-gray1 py-6.25'>
                 <Container>
@@ -119,7 +119,7 @@ const Navbar = () => {
                     </div>
                 </Container>
             </div>
-        </nav>
+        </div>
     )
 }
 
