@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Container from '../common/Container'
 import Image from '../ui/Image'
 import logoImg from "../../assets/images/logo.png"
@@ -10,19 +10,42 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
+import { profileData } from '../../dummyData/ProfileData'
+import { catagoryData } from '../../dummyData/CatagoryData'
+import { MdLogin } from "react-icons/md";
+
 
 
 
 const Navbar = () => {
     const [dropDown, setdropDown] = useState(false)
     const [userdrop, setuserdrop] = useState(false)
-    const location = useLocation()
-    const [pathColor, setpathColor] = useState(location.pathname)
-    useEffect(()=>{
-        const path = location.pathname
-        setpathColor(path)
+    const [islogin, setislogin] = useState(false)
+    const pathName = useLocation().pathname
+    const dropDwonref = useRef(null)
+    const userdropdownref = useRef(null)
 
-    },[location.pathname])
+
+    useEffect(() => {
+        const handleClickOutSide = (event) => {
+            const dropDwonrefCrr = dropDwonref.current
+            if (dropDwonrefCrr && !dropDwonrefCrr.contains(event.target))
+                setdropDown(false)
+        }
+        document.addEventListener("mousedown", handleClickOutSide)
+    }, [dropDown])
+
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const userdropdownrefCrr = userdropdownref.current
+            if (userdropdownrefCrr && !userdropdownrefCrr.contains(event.target))
+                setuserdrop(false)
+        }
+        document.addEventListener('mousedown', handleClickOutside)
+
+    }, [userdrop])
 
     return (
         <nav className='pt-8'>
@@ -34,7 +57,7 @@ const Navbar = () => {
                             {
                                 MenuData.map((item, index) => (
                                     <li key={item.id}>
-                                        <NavLink className={`${item.url == pathColor? 'text-red-500': 'text-black'}`} to={item.url}>{item.label} </NavLink>
+                                        <NavLink className={`${item.url == pathName ? 'text-red-500' : 'text-black'}`} to={item.url}>{item.label} </NavLink>
                                     </li>
                                 ))
                             }
@@ -43,17 +66,22 @@ const Navbar = () => {
 
                 </div>
             </Container>
-            <div className=' bg-[#F5F5F3] py-6.25'>
+            <div className=' bg-gray1 py-6.25'>
                 <Container>
                     <div className='flex items-center justify-between'>
                         <div className='flex gap-2.5 items-center'>
-                            <div className='relative'>
-                                <HiOutlineBars3BottomLeft onClick={()=>setdropDown(!dropDown)} className='text-3xl cursor-pointer' />
+                            <div ref={dropDwonref} className='relative'>
+                                {
+                                    dropDown == false ?
+                                        <HiOutlineBars3BottomLeft onClick={() => setdropDown(!dropDown)} className='text-3xl cursor-pointer' />
+                                        : <IoCloseSharp onClick={() => setdropDown(!dropDown)} className='text-3xl cursor-pointer' />
+
+                                }
                                 <div>
                                     {dropDown &&
                                         <ul className='absolute -bottom-1 left-0 translate-y-full w-40 bg-white shadow-2xl'>
-                                            {[0, 1, 2, 3, 4, 5].map((item, index) => (
-                                                <li className='py-2.5 border-b last:border-b-0 px-4'>Catagory 1</li>
+                                            {catagoryData.map((item, index) => (
+                                                <NavLink className='py-2.5 border-b text-base last:border-b-0 px-8 block' to={item.url}>{item.label}</NavLink>
                                             ))}
                                         </ul>
                                     }
@@ -66,20 +94,26 @@ const Navbar = () => {
                             <FaSearch className='absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer ' />
                         </div>
                         <div className='flex items-center gap-10'>
-                            <div className='flex items-center gap-2.5 relative'>
-                                <BsFillPersonFill onClick={()=>setuserdrop(!userdrop)}  className='text-2xl cursor-pointer' />
-                                <BsFillCaretDownFill  onClick={()=>setuserdrop(!userdrop)} className='cursor-pointer' />
+                            {islogin ?
+                                <div ref={userdropdownref} onClick={() => setuserdrop(!userdrop)} className='flex items-center gap-2.5 relative'>
+                                    <BsFillPersonFill className='text-2xl cursor-pointer' />
+                                    <BsFillCaretDownFill className='cursor-pointer' />
                                     <div>
-                                { 
-                                    userdrop &&
-                                    <ul className='absolute w-50  shadow-2xl bg-white right-0 -bottom-2 translate-y-full '>
-                                        {[0,1,2,3,4,5].map((item,index)=>(
-                                            <li className='py-2.5 border-b last:border-b-0 px-4'>catagory 1</li>
-                                        ))}
-                                    </ul>
-                                    }
+                                        {
+                                            userdrop &&
+                                            <ul className='absolute w-50  shadow-2xl bg-white right-0 -bottom-2 translate-y-full '>
+                                                {profileData.map((item, index) => (
+                                                    <NavLink className='py-2.5 border-b text-base last:border-b-0 px-8 block' to={item.url}>{item.label}</NavLink>
+                                                ))}
+                                            </ul>
+                                        }
                                     </div>
-                            </div>
+                                </div>
+                                :
+                                <NavLink className={"text-2xl"} to={"/login"}>
+                                    <MdLogin />
+                                </NavLink>
+                            }
                             <FaShoppingCart className='text-2xl cursor-pointer' />
                         </div>
                     </div>
