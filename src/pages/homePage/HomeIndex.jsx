@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../../components/pages/home/banner'
+import Banner from '../../components/pages/home/Banner'
 
 const HomeIndex = () => {
   return (

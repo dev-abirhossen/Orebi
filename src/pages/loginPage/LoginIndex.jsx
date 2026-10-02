@@ -20,11 +20,11 @@ const LoginIndex = () => {
           <div className='grid grid-cols-2 mt-10.5 gap-10.75'>
             <div className='flex flex-col gap-2.5 border-b border-b-gray4 pb-5'>
               <label className='font-bold font-DMSans text-primary text-base leading-5.75' htmlFor="">Email Address</label>
-              <Input className={"border-none"} type={"email"} id={"email"} placeholder={"Enter Your Email"} />
+              <Input className={"outline-none py-2.5 text-lg"} type={"email"} id={"email"} placeholder={"Enter Your Email"} />
             </div>
             <div className='flex flex-col gap-2.5 border-b border-b-gray4 pb-5'>
               <label className='font-bold font-DMSans text-primary text-base leading-5.75' htmlFor="">Password</label>
-              <Input className={"border-none"} type={"password"} id={"password"} placeholder={"Enter Your Password"} />
+              <Input className={"outline-none py-2.5"} type={"password"} id={"password"} placeholder={"Enter Your Password"} />
             </div>
           </div>
         </div>
