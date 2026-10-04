@@ -10,13 +10,13 @@ import ShopIndex from "./pages/shopPage/ShopIndex";
 import ErrorIndex from "./components/common/ErrorIndex";
 import AboutIndex from "./pages/aboutPage/AboutIndex";
 import LoginIndex from "./pages/loginPage/LoginIndex";
-import DashboardIndex from "./pages/dashboardPage/DashboardIndex";
+import DashboardIndex from "./pages/dashboard/dashboardPage/DashboardIndex";
 import DashboardLayout from "./components/layout/DashboardLayout";
-import ProfileIndex from "./pages/profilePage/ProfileIndex";
-import DownloadIndex from "./pages/downloadPage/DownloadIndex";
-import OthersIndex from "./pages/othersPage/OthersIndex";
-import AddressIndex from "./pages/addressPage/AddressIndex";
-import AccountDetailsIndex from "./pages/accountDetailsPage/AccountDetailsIndex";
+import ProfileIndex from './pages/dashboard/profilePage/ProfileIndex'
+import DownloadIndex from "./pages/dashboard/downloadPage/DownloadIndex";
+import OthersIndex from "./pages/dashboard/othersPage/OthersIndex";
+import AddressIndex from "./pages/dashboard/addressPage/AddressIndex";
+import AccountDetailsIndex from "./pages/dashboard/accountDetailsPage/AccountDetailsIndex";
 
 const routes = createRoutesFromElements(
   <Route>
@@ -36,6 +36,7 @@ const routes = createRoutesFromElements(
       </Route>
     </Route>
     <Route path="*" element={<ErrorIndex />} />
+    
   </Route>,
 );
 
