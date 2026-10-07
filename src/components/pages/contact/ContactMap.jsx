@@ -33,9 +33,9 @@ const ContactMap = () => {
         <div className='w-112.5 bg-white absolute top-1/2 -translate-y-1/2 left-20'>
           <Accordion allowZeroExpanded>
             {mapAccordionData.map((item) => (
-              <AccordionItem className='py-7.5 px-5 flex flex-col gap-2.5' key={item.id}>
+              <AccordionItem className='py-7.5  px-5 flex flex-col gap-2.5' key={item.id}>
                 <AccordionItemHeading>
-                  <AccordionItemButton onClick={()=>handleIndex(item.id)} className='flex justify-between items-center text-primary font-DMSans font-bold text-base leading-5.75'>
+                  <AccordionItemButton onClick={()=>handleIndex(item.id)}  className='flex justify-between items-center text-primary font-DMSans font-bold text-base leading-5.75'>
                     {item.title} {activeIndex === item.id? <FaMinus /> :  <FaPlus /> }
                   </AccordionItemButton>
                 </AccordionItemHeading>
