@@ -14,6 +14,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { profileData } from '../../dummyData/ProfileData'
 import { catagoryData } from '../../dummyData/CatagoryData'
 import { MdLogin } from "react-icons/md";
+import { Bounce, ToastContainer } from 'react-toastify'
 
 
 
@@ -48,7 +49,21 @@ const Navbar = () => {
     }, [userdrop])
 
     return (
+        
         <div className='pt-8'>
+             <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition={Bounce}
+            />
             <Container>
                 <nav className='flex justify-between items-center pb-8'>
                     <NavLink to={'/'}><Image src={logoImg} alt={"logo.png"} /></NavLink>

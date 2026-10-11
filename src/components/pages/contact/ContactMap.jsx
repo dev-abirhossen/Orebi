@@ -14,6 +14,7 @@ import { FaMinus } from "react-icons/fa6";
 
 
 
+
 const ContactMap = () => {
 
   const [activeIndex, setactiveIndex] = useState()
@@ -24,6 +25,7 @@ const ContactMap = () => {
     }else{
       setactiveIndex(id)
     }
+    
   }
 
   return (
@@ -34,9 +36,9 @@ const ContactMap = () => {
           <Accordion allowZeroExpanded>
             {mapAccordionData.map((item) => (
               <AccordionItem className='py-7.5  px-5 flex flex-col gap-2.5' key={item.id}>
-                <AccordionItemHeading>
-                  <AccordionItemButton onClick={()=>handleIndex(item.id)}  className='flex justify-between items-center text-primary font-DMSans font-bold text-base leading-5.75'>
-                    {item.title} {activeIndex === item.id? <FaMinus /> :  <FaPlus /> }
+                <AccordionItemHeading onClick={()=>handleIndex(item.id)}>
+                  <AccordionItemButton  className='flex justify-between items-center text-primary font-DMSans font-bold text-base leading-5.75'>
+                    {item.title} {activeIndex === item.id? <FaMinus /> : <FaPlus /> }
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>

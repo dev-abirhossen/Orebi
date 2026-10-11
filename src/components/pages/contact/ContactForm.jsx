@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import BreadCrumb from '../../common/BreadCrumb'
 import Input from '../../ui/Input'
 import PrimaryBtn from '../../ui/PrimaryBtn'
+import { Bounce, toast, ToastContainer } from 'react-toastify'
 
 const ContactForm = () => {
 
@@ -32,13 +33,18 @@ const ContactForm = () => {
         if (!formData.name) {
             setformError((prevError) => ({
                 ...prevError,
-                email: "Name is required"
+                name: "Name is required"
+            }));
+        }else {
+            setformError((prevError) => ({
+                ...prevError,
+                name: ""
             }));
         }
         if (!formData.email) {
             setformError((prevError) => ({
                 ...prevError,
-                name: "Email is required"
+                email: "Email is required"
             }));
         } else if (!emailRegex.test(formData.email)) {
             setformError((prevError) => ({
@@ -63,6 +69,17 @@ const ContactForm = () => {
                 msg: ""
             }));
         }
+        toast.success('🦄 Wow so easy!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+        });
     };
 
     return (
@@ -97,7 +114,8 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className='pb-17.5 '>
-                    <PrimaryBtn onClick={handleClick} className={"mt-7.25 cursor-pointer"} text={"Login"} />
+                    <PrimaryBtn onClick={handleClick} className={"mt-7.25 cursor-pointer"} text={"Post"} />
+                    
                 </div>
             </div>
         </section>
