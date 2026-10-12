@@ -54,12 +54,30 @@ const RegistrationIndex = () => {
         if(!formdata.telephone.trim()){
           validationError.telephone = "Telephone is Required "
         }
+        // address1 check
+        if(!formdata.address1.trim()){
+            validationError.address1 = "Address is Required "
+        }
+        // address2 check
+        if(!formdata.address2.trim()){
+            validationError.address2 = "Address is Required "
+        }
+
         // password check
         if(!formdata.password.trim()){
           validationError.password = "Password is Required "
         }else if(formdata.password.length < 6){
           validationError.password = "Password Can be Must Minimum 6 Character"
         }
+        // city check 
+        if(!formdata.city.trim()){
+            validationError.city = "city is Required "
+        }
+        // Post code 
+        if(!formdata.postCode.trim()){
+            validationError.postCode = "Post code is Required"
+        }
+
         // confirm password check
         if(!formdata.confirmPassword.trim()){
           validationError.confirmPassword = "Confirm Password is Required "
