@@ -129,7 +129,7 @@ const Navbar = () => {
                                     <MdLogin />
                                 </NavLink>
                             }
-                            <FaShoppingCart className='text-2xl cursor-pointer' />
+                            <NavLink to={"/cart"}><FaShoppingCart className='text-2xl cursor-pointer' /></NavLink>
                         </div>
                     </div>
                 </Container>
