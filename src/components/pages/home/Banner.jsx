@@ -1,18 +1,33 @@
 import React from 'react'
-import Container from '../../common/Container'
-// import bannerImg from '../../../assets/images/banneimg.png'
+import { NavLink } from 'react-router-dom'
+import { bannerImgData } from '../../../dummyData/bannerImgData'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import SliderComponent from "react-slick";
+const Slider = SliderComponent.default || SliderComponent;
+import Image from '../../ui/Image';
 
 const Banner = () => {
-  return (  
-    <section className='bg-gray border-t-34 border-t-gray6 '>
-      <Container>
-        <div>
-        <div>
-            <span>Final Offer</span>
-          <p>Up to <span> 50% </span> sale for all furniture items!</p>
-        </div>
-        </div>
-      </Container>
+
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
+  return (
+    <section>
+      <div className='bg-gray6/30 h-4'></div>
+      <Slider {...settings}>
+      {bannerImgData.map((item, index) => (
+        <NavLink key={index} to={item.url}>
+          <Image src={item.img} alt={item.alt} />
+        </NavLink>
+        ))}
+        </Slider>
     </section>
   )
 }
