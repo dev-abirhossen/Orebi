@@ -1,13 +1,17 @@
 import React from 'react'
 import Container from '../../common/Container'
-import ProductCardImg from '../../../assets/images/cardimg.jpg'
 import ProductCardBox from '../../common/ProductCardBox'
+import { productCardData } from '../../../dummyData/productCardData'
 const ProductCard = () => {
   return (
     <section className='mt-32 mb-29.5 '>
         <Container>
             <h3 className='font-DMSans font-bold text-[39px] text-primary'>New Arrivals</h3>    
-            <ProductCardBox img={ProductCardImg} alt={"ProductImg"} productName={"Basic Crew Neck Tee"} productPrice={"$44.00"}/>
+            <div className='grid grid-cols-4 gap-10'>
+                {productCardData.map((item,index)=>(
+                     <ProductCardBox key={index} img={item.img} alt={item.alt} productName={item.productName} productPrice={item.productPrice}/>
+                ))}
+            </div>
         </Container>
     </section>
 

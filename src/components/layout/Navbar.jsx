@@ -94,7 +94,7 @@ const Navbar = () => {
                                 }
                                 <div>
                                     {dropDown &&
-                                        <ul className='absolute -bottom-1 left-0 translate-y-full w-40 bg-white shadow-2xl'>
+                                        <ul className='absolute z-10 -bottom-1 left-0 translate-y-full w-40 bg-white shadow-2xl'>
                                             {catagoryData.map((item, index) => (
                                                 <NavLink className='py-2.5 border-b text-base last:border-b-0 px-8 block' to={item.url}>{item.label}</NavLink>
                                             ))}
@@ -116,7 +116,7 @@ const Navbar = () => {
                                     <div>
                                         {
                                             userdrop &&
-                                            <ul className='absolute w-50  shadow-2xl bg-white right-0 -bottom-2 translate-y-full '>
+                                            <ul className='absolute z-10 w-50 shadow-2xl bg-white right-0 -bottom-2 translate-y-full '>
                                                 {profileData.map((item, index) => (
                                                     <NavLink className='py-2.5 border-b text-base last:border-b-0 px-8 block' to={item.url}>{item.label}</NavLink>
                                                 ))}
