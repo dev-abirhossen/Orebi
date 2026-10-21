@@ -4,29 +4,38 @@ export const productCardData = [
     {
         id: 0,
         img: ProductCardImg,
-        alt:"ProdactCardImg",
+        catagory: "New",
+        isNew: true,
+        alt: "ProdactCardImg",
         productName: "Basic Crew Neck Tee",
         productPrice: "$44.00"
     },
     {
         id: 1,
         img: ProductCardImg,
-        alt:"ProdactCardImg",
+        isNew: false,
+        alt: "ProdactCardImg",
+        alt: "ProdactCardImg",
         productName: "Basic Crew Neck Tee",
-        productPrice: "$44.00"
-    },
-    {
-        id: 1,
-        img: ProductCardImg,
-        alt:"ProdactCardImg",
-        productName: "Basic Crew Neck Tee",
-        productPrice: "$44.00"
+        productPrice: "$44.00",
     },
     {
         id: 2,
         img: ProductCardImg,
-        alt:"ProdactCardImg",
+        alt: "ProdactCardImg",
+        alt: "ProdactCardImg",
         productName: "Basic Crew Neck Tee",
-        productPrice: "$44.00"
+        productPrice: "$44.00",
+        isDiscount: true,
+        discountValue:20
+    },
+    {
+        id: 3,
+        img: ProductCardImg,
+        alt: "ProdactCardImg",
+        productName: "Basic Crew Neck Tee",
+        productPrice: "$44.00",
+        isDiscount: true,
+        discountValue:"10"
     },
 ]
