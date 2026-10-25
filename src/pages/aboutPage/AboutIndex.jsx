@@ -1,10 +1,11 @@
 import React from 'react'
+import Brands from '../../components/pages/about/Brands'
 
 const AboutIndex = () => {
   return (
-    <div>
-      AboutIndex
-    </div>
+    <>
+      <Brands/>
+    </>
   )
 }
 

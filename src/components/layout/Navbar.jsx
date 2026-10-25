@@ -72,7 +72,7 @@ const Navbar = () => {
                             {
                                 MenuData.map((item, index) => (
                                     <li key={item.id}>
-                                        <NavLink className={`${item.url == pathName ? 'text-red-500 font-semibold' : 'text-black font-semibold'}`} to={item.url}>{item.label} </NavLink>
+                                        <NavLink className={`${item.url == pathName ? 'text-red-500 font-bold' : 'text-black font-bold'}`} to={item.url}>{item.label} </NavLink>
                                     </li>
                                 ))
                             }
