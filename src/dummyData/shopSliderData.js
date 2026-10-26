@@ -1,23 +1,23 @@
 export const shopSliderCatagoryData = [
     {
         id:0,
-        label:"catagory-1",
+        label:"Catagory-1",
     },
     {
         id:1,
-        label:"catagory-2",
+        label:"Catagory-2",
     },
     {
         id:2,
-        label:"catagory-3",
+        label:"Catagory-3",
     },
     {
         id:3,
-        label:"catagory-4",
+        label:"Catagory-4",
     },
     {
         id:4,
-        label:"catagory-5",
+        label:"Catagory-5",
     },
 ]
 

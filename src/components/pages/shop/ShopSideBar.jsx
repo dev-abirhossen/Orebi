@@ -27,7 +27,7 @@ const ShopSideBar = () => {
                 
                 <div>
                     {shopSliderCatagoryData.map((item,index)=>(
-                        <div className='w-92.75 h-12.25 mt-8.75' key={index}>
+                        <div className='w-92.75 h-12.25 mt-8.75 border-b border-b-gray4' key={index}>
                             <span className=' text-gray3 text-base font-DMSans font-normal leading-7.5'>{item.label}</span>
                         </div>
                     ))}
@@ -43,7 +43,7 @@ const ShopSideBar = () => {
                 
                 <div>
                     {shopSliderColor.map((item,index)=>(
-                        <div className='w-92.75 h-12.25 mt-8.75 flex gap-2.5 items-center' key={index}>
+                        <div className='w-92.75 h-12.25 mt-8.75 flex gap-2.5 items-center border-b border-b-gray4' key={index}>
                             <div className={`size-2.75 rounded-full ${item.color}`}/>
                             <span className=' text-gray3 text-base font-DMSans font-normal leading-7.5'>{item.label}</span>
                         </div>
@@ -60,7 +60,7 @@ const ShopSideBar = () => {
                 
                 <div>
                     {shopSliderBrand.map((item,index)=>(
-                        <div className='w-92.75 h-12.25 mt-8.75' key={index}>
+                        <div className='w-92.75 h-12.25 mt-8.75 border-b border-b-gray4' key={index}>
                             <span className=' text-gray3 text-base font-DMSans font-normal leading-7.5'>{item.label}</span>
                         </div>
                     ))}
@@ -76,7 +76,7 @@ const ShopSideBar = () => {
                 
                 <div>
                     {shopSliderPrice.map((item,index)=>(
-                        <div className='w-92.75 h-12.25 mt-8.75' key={index}>
+                        <div className='w-92.75 h-12.25 mt-8.75 border-b border-b-gray4' key={index}>
                             <span className=' text-gray3 text-base font-DMSans font-normal leading-7.5'>{item.label}</span>
                         </div>
                     ))}
