@@ -20,12 +20,14 @@ import AccountDetailsIndex from "./pages/dashboard/accountDetailsPage/AccountDet
 import ContactIndex from "./pages/contactPage/ContactIndex";
 import RegistrationIndex from "./pages/loginPage/RegistrationIndex";
 import CartIndex from "./pages/cartPage/CartIndex";
+import SingleProduct from "./pages/shopPage/singleProductPage/SingleProduct";
 
 const routes = createRoutesFromElements(
   <Route>
     <Route element={<RootLayout />}>
       <Route index element={<HomeIndex />} />
       <Route path="/shop" element={<ShopIndex />} />
+      <Route path="/shop/:id" element={<SingleProduct/>} />
       <Route path="/about" element={<AboutIndex />} />
       <Route path="/login" element={<LoginIndex />} />
       <Route path="/contact" element={<ContactIndex/>} />
