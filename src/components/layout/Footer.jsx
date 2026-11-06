@@ -7,7 +7,8 @@ import { helpData } from '../../dummyData/helpData'
 import Paragraph from '../ui/Paragraph'
 import Image from '../ui/Image'
 import logo from "../../assets/images/logo.png"
-import { footerIcon } from '../../dummyData/footericon'
+import { footericon } from '../../dummyData/footericon'
+
 
 const Footer = () => {
   const fotheadClss = `font-bold font-DMSans uppercase text-base text-primary leading-7 `
@@ -85,7 +86,7 @@ const Footer = () => {
         <div className='mt-16.25 flex justify-between'>
           <ul className='flex gap-6'>
             {
-              footerIcon.map((item, index) => (
+              footericon .map((item, index) => (
                 <li key={index}>
                   <NavLink className={"text-xl"} to={item.url}>{item.icon}</NavLink>
                 </li>

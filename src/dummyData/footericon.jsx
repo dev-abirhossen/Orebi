@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 
 
 
-export const footerIcon = [
+export const footericon = [
     {
         id:0,
         icon:<FaFacebookF />,
