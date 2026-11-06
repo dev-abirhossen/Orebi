@@ -7,7 +7,7 @@ import { helpData } from '../../dummyData/helpData'
 import Paragraph from '../ui/Paragraph'
 import Image from '../ui/Image'
 import logo from "../../assets/images/logo.png"
-import { footerIcon } from '../../dummyData/FooterIcon'
+import { footerIcon } from '../../dummyData/footericon'
 
 const Footer = () => {
   const fotheadClss = `font-bold font-DMSans uppercase text-base text-primary leading-7 `
