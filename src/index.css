@@ -4,11 +4,8 @@
 @theme {
   /* ============Font start=========== */
   --font-DMSans: "DM Sans", sans-serif;
-  
   /* ============Font end=========== */
 
-
-  
   /* ============ Color start =============== */
   --color-primary: #262626;
   --color-gray1: #F5F5F3;
@@ -18,9 +15,13 @@
   --color-gray5: #6D6D6D;
   --color-gray6: #979797;
   --color-cuponCol: #F0F0F0;
-  
-
   /* ============ Color end =============== */
-
+/* Responsive start here =============== */
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1536px;
+/* Responsive end here =============== */
 
 }

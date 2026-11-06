@@ -12,12 +12,12 @@ const HomeIndex = () => {
   return (
     <>
       <Banner/>
-      <OurCompitent/>
+      {/* <OurCompitent/>
       <PromoOffer/>
       <ProductCard/>
       <BestSeller/>
       <YearPromoOffer/>
-      <SpecialOffer/>
+      <SpecialOffer/> */}
     </>
   )
 }

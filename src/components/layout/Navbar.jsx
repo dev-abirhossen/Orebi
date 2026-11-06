@@ -10,13 +10,13 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { IoCloseSharp } from "react-icons/io5";
+import { IoCloseSharp, IoSearchSharp } from "react-icons/io5";
 import { profileData } from '../../dummyData/ProfileData'
 import { catagoryData } from '../../dummyData/CatagoryData'
 import { MdLogin } from "react-icons/md";
 import { Bounce, ToastContainer } from 'react-toastify'
-
-
+import { HiMiniBars3 } from "react-icons/hi2";
+import { RxCross2 } from "react-icons/rx";
 
 
 const Navbar = () => {
@@ -26,7 +26,9 @@ const Navbar = () => {
     const pathName = useLocation().pathname
     const dropDwonref = useRef(null)
     const userdropdownref = useRef(null)
-    const a = "abir"
+    const [sidebar, setsidebar] = useState()
+
+    console.log(sidebar)
 
 
     useEffect(() => {
@@ -50,25 +52,46 @@ const Navbar = () => {
     }, [userdrop])
 
     return (
-        
-        <div className='pt-8'>
-             <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick={false}
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
-            transition={Bounce}
+
+        <div className='pt-8 px-5 xxl:px-0 relative'>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
             />
+            <div className={`${sidebar ? 'translate-x-0' : 'translate-x-full'} bg-black/50 h-screen absolute right-0 top-0 w-50 z-60 flex flex-col items-center transition-all duration-300`}>
+                <div >
+                    <ul className='mt-15 flex flex-col gap-10'>
+                        {
+                            MenuData.map((item, index) => (
+                                <li key={item.id}>
+                                    <NavLink className={`${item.url == pathName ? 'text-red-500 font-bold' : 'text-white font-bold'}`} to={item.url}>{item.label} </NavLink>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
             <Container>
                 <nav className='flex justify-between items-center pb-8'>
                     <NavLink to={'/'}><Image src={logoImg} alt={"logo.png"} /></NavLink>
-                    <div>
+                    <div onClick={() => setsidebar(!sidebar)} className="md:hidden z-100">
+                        {sidebar ?
+                            <RxCross2 className='text-2xl text-white font-bold ' />
+                            :
+                            <HiMiniBars3 className='text-2xl font-bold' />
+                        }
+
+                    </div>
+                    <div className="hidden md:block">
                         <ul className='flex gap-10'>
                             {
                                 MenuData.map((item, index) => (
@@ -82,7 +105,7 @@ const Navbar = () => {
 
                 </nav>
             </Container>
-            <div className=' bg-gray1 py-6.25'>
+            <div className='bg-gray1 py-6.25'>
                 <Container>
                     <div className='flex items-center justify-between'>
                         <div className='flex gap-2.5 items-center'>
@@ -105,7 +128,7 @@ const Navbar = () => {
                             </div>
                             <Paragraph className={"font-DMSans text-3.5 font-normal text-primary"} text={"Shop by Category"} />
                         </div>
-                        <div className='w-150 relative'>
+                        <div className='w-150 relative hidden lg:block'>
                             <input className='w-full py-4 text-lg px-5 bg-white' type="text" placeholder='Search Products' />
                             <FaSearch className='absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer ' />
                         </div>
@@ -129,8 +152,10 @@ const Navbar = () => {
                                 <NavLink className={"text-2xl"} to={"/login"}>
                                     <MdLogin />
                                 </NavLink>
+                                
                             }
                             <NavLink to={"/cart"}><FaShoppingCart className='text-2xl cursor-pointer' /></NavLink>
+                            <span><IoSearchSharp className='text-2xl cursor-pointer' /></span>
                         </div>
                     </div>
                 </Container>
