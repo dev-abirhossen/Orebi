@@ -9,10 +9,8 @@ import Image from '../ui/Image'
 import logo from "../../assets/images/logo.png"
 import { footericon } from '../../dummyData/footericon'
 
-
 const Footer = () => {
   const fotheadClss = `font-bold font-DMSans uppercase text-base text-primary leading-7 `
-
   const current = new Date().getFullYear()
 
   return (
@@ -30,7 +28,6 @@ const Footer = () => {
                       <li key={index}>
                         <NavLink className={"text-sm font-normal text-gray5 font-DMSans leading-5.75"} to={item.url}>{item.label}</NavLink>
                       </li>
-
                     ))
                   }
                 </ul>
@@ -59,7 +56,6 @@ const Footer = () => {
                         <li key={index}>
                           <NavLink className={"text-sm font-normal text-gray5 font-DMSans leading-5.75"} to={item.url}>{item.label}</NavLink>
                         </li>
-
                       ))
                     }
                   </ul>
@@ -68,7 +64,7 @@ const Footer = () => {
             </div>
 
             <div className='flex gap-64'>
-              <div >
+              <div>
                 <div className='flex flex-col'>
                   <span className={fotheadClss}>(052) 611-5711</span>
                   <span className={fotheadClss}>company@domain.com</span>
@@ -86,7 +82,7 @@ const Footer = () => {
         <div className='mt-16.25 flex justify-between'>
           <ul className='flex gap-6'>
             {
-              footericon .map((item, index) => (
+              footericon.map((item, index) => (
                 <li key={index}>
                   <NavLink className={"text-xl"} to={item.url}>{item.icon}</NavLink>
                 </li>
