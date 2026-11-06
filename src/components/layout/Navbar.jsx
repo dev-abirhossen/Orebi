@@ -26,6 +26,7 @@ const Navbar = () => {
     const pathName = useLocation().pathname
     const dropDwonref = useRef(null)
     const userdropdownref = useRef(null)
+    const a = abir
 
 
     useEffect(() => {
