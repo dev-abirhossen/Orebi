@@ -16,6 +16,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-gray1 pt-13.75 pb-13'>
+      <div></div>
       <Container>
         <div>
           <div className='grid grid-cols-2'>
