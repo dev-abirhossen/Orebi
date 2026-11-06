@@ -48,6 +48,7 @@ const SingleProduct = () => {
               </div>
             </div>
         </Container>
+        <div></div>
     </section>
   )
 }
